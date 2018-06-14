@@ -73,6 +73,7 @@ public:
 		node_t *temp = head;
 		head = head->next;
 		delete temp;
+		return a;
 	}
    else {
 	   throw std::logic_error("Error");
