@@ -32,38 +32,21 @@ public:
         	
 	}
 	
-    queue_t<T> & operator=(queue_t<T> & other)
+    queue_t<T> & operator=(queue_t<T> const & other)
     {
-	    if(other.heado() != nullptr){
-		    this->~queue_t();
-             }
-
-        node_t* node = other.heado();
-        while(node != nullptr){
-		push(node->value);
-		node = node->next;
-	}
-        return *this;
+	  if (&other != this) {
+		queue_t(other).swap(*this);
+		}
     }
     
     ~queue_t()
     {
-        if (head != nullptr)
-        {
-            del (head);
-        }
-    }
-
-    void del(node_t* temp)
-    {
-        if (temp != nullptr)
-        {
-            if (temp->next != nullptr)
-            {
-                del(temp->next);
-            }
-            delete temp;
-        }
+       while (head != nullptr) 
+	{
+		node_t * node = head;
+		head = head->next;
+		delete node;
+	}
     }
     
     void push(T key ){    
