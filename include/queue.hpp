@@ -67,14 +67,13 @@ public:
     }
     
  T pop (){
-  if(head != nullptr){
-	T phead = head->value;
- 	node_t* node = head->next;
-	delete head;
-	head=node;
-	return phead;
-	delete node;
-        }
+        T a ;
+        if (head != nullptr) {
+         	a = head->value;
+		node_t *temp = head;
+		head = head->next;
+		delete temp;
+	}
    else {
 	   throw std::logic_error("Error");
    }
