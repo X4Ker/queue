@@ -37,6 +37,7 @@ public:
 	  if (&other != this) {
 		queue_t(other).swap(*this);
 		}
+	    return * this;
     }
     
     ~queue_t()
