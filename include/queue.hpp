@@ -22,22 +22,6 @@ public:
         tail = nullptr;
     }
 	
-	node_t * get_head() {
-		return head;
-	}
-  
-	node_t * get_tail() {
-		return tail;
-	}
-  
-	T taill(node_t* tailo){
-		return tailo->value;
-	}
-	
-	T headl(node_t* heado){
-		return heado->value;
-	}
-    
        queue_t(queue_t<T> const & other)
 	{
 		node_t* node = other.heado();
